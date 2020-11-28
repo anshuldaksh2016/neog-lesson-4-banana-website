@@ -11,6 +11,6 @@ const output = document.querySelector(".output");
 btn.addEventListener("click", function () {
     let input = textarea.value;
     console.log("button clicked " + input);
-    output.innerText = "Translated"
+    output.innerText = input;
 })
 
