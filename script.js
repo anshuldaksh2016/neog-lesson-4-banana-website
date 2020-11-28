@@ -4,7 +4,11 @@
 //alert(`a value is ${a}`);
 
 const btn = document.querySelector(".btn");
+const textarea = document.querySelector("textarea");
+
 
 btn.addEventListener("click", function () {
-    console.log("button clicked ");
+    let input = textarea.value;
+    console.log("button clicked " + input);
 })
+
