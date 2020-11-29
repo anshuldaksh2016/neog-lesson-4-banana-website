@@ -7,8 +7,9 @@ const btn = document.querySelector(".btn");
 const textarea = document.querySelector("textarea");
 const output = document.querySelector(".output");
 
-const serverUrl = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
+//const serverUrl = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
 
+const serverUrl = "https://api.funtranslations.com/translate/minion.json";
 
 
 function requestUrl(input) {
