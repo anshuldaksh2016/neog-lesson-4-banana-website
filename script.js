@@ -7,26 +7,26 @@ const btn = document.querySelector(".btn");
 const textarea = document.querySelector("textarea");
 const output = document.querySelector(".output");
 
-const url = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
+const serverUrl = "https://lessonfourapi.tanaypratap.repl.co/translate/minion.json";
 
 
 
-//function requestUrl(url) {
-//    return `${url}?text=input`;
-//}
+function requestUrl(input) {
+    return `${serverUrl}?text=${input}`;
+}
 
 btn.addEventListener("click", function () {
 
     const input = textarea.value;
-
-    const requestUrl = `${url}?text=${input}`
+    // calling server for procesing
 
     fetch(requestUrl)
         .then(response => response.json())
-        .then(data => output.innerText = data.contents.translated);
-
-
-})
+        .then(json => {
+            var translatedText = json.contains.translated;
+            output.innerText = translatedText;
+        })
+        .catch()
 
 
 // mock API call 
