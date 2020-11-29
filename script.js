@@ -7,7 +7,7 @@ const btn = document.querySelector(".btn");
 const textarea = document.querySelector("textarea");
 const output = document.querySelector(".output");
 
-const serverUrl = "https://lessonfourapi.tanaypratap.repl.co/translate/minion.json";
+const serverUrl = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
 
 
 
@@ -15,18 +15,25 @@ function requestUrl(input) {
     return `${serverUrl}?text=${input}`;
 }
 
-btn.addEventListener("click", function () {
+function errorHandler(error) {
+    console.log(error)
 
-    const input = textarea.value;
+}
+
+function clickHandler() {
+
+    const input = textarea.value;  //taking the input
     // calling server for procesing
 
-    fetch(requestUrl)
+    fetch(requestUrl(input))
         .then(response => response.json())
         .then(json => {
-            var translatedText = json.contains.translated;
+            var translatedText = json.contents.translated;
             output.innerText = translatedText;
         })
-        .catch()
+        .catch(errorHandler)
 
+};
 
-// mock API call 
+btn.addEventListener("click", clickHandler)
+// mock API call
