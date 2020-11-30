@@ -43,8 +43,28 @@ const textarea = document.querySelector("#textarea");
 const btn = document.querySelector("#button");
 const output = document.querySelector(".output");
 
-btn.addEventListener("click", function () {
-    const input = textarea.value;
-    //console.log(input)
 
-})
+const serverUrl = "https://api.funtranslations.com/translate/minion.json";
+
+function requestUrl(input) {
+    return `${serverUrl}?text=${input}`;
+}
+
+function errorHandler(err) {
+    console.log(error);
+    prompt("error occured!!");
+}
+function clickHandler() {
+    const inputText = textarea.value;
+
+    fetch(requestUrl(inputText))
+        .then(res => res.json())
+        .then(json => {
+            var translatedText = json.contents.translated;
+            output.innerText = translatedText;
+        })
+        .catch(errorHandler)
+
+}
+
+btn.addEventListener("click", clickHandler);
