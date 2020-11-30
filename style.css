@@ -17,6 +17,8 @@
   margin: auto;
   padding: 1rem;
   max-width: 600px;
+
+  display: block;
 }
 
 #textarea {

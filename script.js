@@ -38,3 +38,13 @@
 //
 //btn.addEventListener("click", clickHandler)
 //// mock API call
+
+const textarea = document.querySelector("#textarea");
+const btn = document.querySelector("#button");
+const output = document.querySelector(".output");
+
+btn.addEventListener("click", function () {
+    const input = textarea.value;
+    //console.log(input)
+
+})
